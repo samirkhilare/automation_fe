@@ -51,6 +51,7 @@ body {
 
 .menu-icon {
   display: none;
+  
 }
 /* End Header  */
 
@@ -277,4 +278,27 @@ body {
 }
 .modal-title {
   color: white;
+}
+
+#modal-screen-input{
+  text-align: center !important;
+}
+
+.header-left-menu-text{
+  font-weight: 100;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.date-and-time-picker{
+  width: 100%;
+  height: 60px;
+  font-size: 20px;
+  border:1.5px solid white;
+  color: white;
+  border-radius: 5px;
+}
+.date-and-time-picker-calender{
+  color: white;
+  font-size: large;
 }

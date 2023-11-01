@@ -13,7 +13,6 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import NotSelected from "../../Assets/notSelected.png";
-import ReactPlayer from "react-player/youtube";
 import { GoDotFill } from "react-icons/go";
 import { BASE_URL } from "../../services/httpRequest";
 
@@ -21,17 +20,20 @@ const textFieldStyle = {
   border: "1px solid white", // Set the border color to white
   color: "white",
   width: "100%",
+  textAlign:'right !important'
 };
 const labelStyle = {
   backgroundColor: "#1d2634",
   padding: "2px",
   color: "white",
+  textAlign:"center !important"
 };
 const inputProps = {
   style: {
-    color: "white", // Set the text color to white
-    // Add any other text styles you want
-  },
+    color: "white", 
+    fontSize:"30px",
+    textAlign:"right !important"
+    },
 };
 
 const PartCard = (props) => {
@@ -100,10 +102,11 @@ const ModalScreen = () => {
       <Grid container item>
         <Grid item xs={12}>
           <Box component="form" noValidate autoComplete="off">
-            <Box mb="10px">Scan Code</Box>
-            <Box display="flex">
+            <Box mb="10px" color='white' fontSize={22} textAlign="center">Please scan the code</Box>
+            <Box display="flex" textAlign={"center"}>
               <TextField
-                id="description"
+                className="modal-screen-input"
+                id="modal-screen-input"
                 type="text"
                 name="fgCode"
                 label="FG Code"
@@ -113,17 +116,10 @@ const ModalScreen = () => {
                   style: labelStyle,
                 }}
                 InputProps={inputProps}
-                sx={{ color: "white" }}
-                style={textFieldStyle}
+                sx={{ color: "white"}}
+                style={textFieldStyle}              
                 onChange={handleModalMasterChanges}
               />
-              <Button
-                onClick={reqToSendDataToModbus}
-                sx={{ marginLeft: "20px" }}
-                variant="contained"
-              >
-                Send
-              </Button>
             </Box>
           </Box>
         </Grid>
@@ -132,7 +128,7 @@ const ModalScreen = () => {
       <Grid container spacing={2} mt={5}>
         <Grid xs={6}>
           <Grid container p={2}>
-            {filteredModals ? (
+            {filteredModals && (
               filteredModals?.partsSelection?.map((item, index) => (
                 <Grid xs={4}>
                   <Box sx={{ padding: 1 }}>
@@ -140,8 +136,6 @@ const ModalScreen = () => {
                   </Box>
                 </Grid>
               ))
-            ) : (
-              <h1>No Data Preview! Select FG Code</h1>
             )}
           </Grid>
         </Grid>
@@ -176,9 +170,6 @@ const ModalScreen = () => {
           )}
         </Grid>
       </Grid>
-      {/* ) : (
-        <h1>Select FG Code</h1>
-      )} */}
     </div>
   );
 };

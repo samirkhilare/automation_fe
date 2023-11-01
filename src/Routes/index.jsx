@@ -13,7 +13,7 @@ const Routers = () => {
       <BrowserRouter basename="/">
         <Suspense>
           <Routes>
-            {isAuthenticated ? (
+            {true ? (
               <Route
                 path={`/*`}
                 element={<Layout setIsAuthenticated={setIsAuthenticated} />}

@@ -39,6 +39,11 @@ const Sidebar = ({ openSidebarToggle, OpenSidebar, setIsAuthenticated }) => {
       url: "/modal-master",
     },
     {
+      icon: <BsFillGearFill />,
+      title: "Setting",
+      url: "/settings",
+    },
+    {
       icon: <BsPeopleFill />,
       title: "Customers",
     },
