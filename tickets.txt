@@ -1,0 +1,86 @@
+Modal master 
+ 1. show whole recipi table in modal table
+ 2. show part summary.
+
+part selection 
+
+setp 1 :
+
+seach box
+	1. select specific FG code
+	2. then show the all row information as present for that FG code and show as like slide noo 2
+------------------------------------------------------------------------------------------------------
+
+1. Dashboard tiles: 
+            - color should be light
+            - Production counter display
+            - shiftwise count will get from the modbus
+            - Read ok count from the modbus and show these counts form the first tile
+		tile 1 : title: (Shiftwisse) count  
+	    tile 2 : Day wise count 
+	    tile 3 : Month wise count
+	    tile 4 : Year wise count
+
+2. Sidebar:
+            - Add arrow for collaping 
+            - Setting tab should be on Search tab 
+            - Add new sign out tab a last
+
+3. Login page:
+            - Add login page
+            - Add two user roles
+            - Role should be 1. Superwiser and Operator
+            - Show logger information in the header
+            _ From for adding new operator.
+
+4. Part master:
+            - form fields 
+                : Part name (String)
+                : Part code (String)
+                : Image (File field)
+                : Date and Time (date) from system
+            - Add table for Part master
+                Column will be as like form sequence
+            - Perform CRUD operation
+
+5. Modal Master:
+            - form fields
+                : FG Code (string) 
+                : Description (string)
+                : Parts Selection (select) from part master 
+                : Quantity (number)
+                : Vedio (file)
+                : Date And Time (date) from system
+                : Example
+                {
+                    fgCode:"669714",
+                    Description: "DRX125HP - TM 4P 40A 25kA"
+                    parts:[
+                        {
+                           : Part name (String)
+                           : Part code (String)
+                           : Image (File field)
+                           : Date and Time (date) from system
+                           : Quantity
+                        },
+                        {
+                           : Part name (String) : null
+                           : Part code (String) : null
+                           : Image (File field) : null
+                           : Date and Time (date) from system : null
+                           : Quantity : null
+                        },
+                        {
+                            partCode:"EB02013AA"
+                        },
+                        ....
+                        {
+                            partCode:"EB02013AA"
+                        },
+                    ]
+                                    }
+
+
+
+        
+
